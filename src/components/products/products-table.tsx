@@ -215,6 +215,8 @@ export const ProductsTable = () => {
           count={Math.ceil(count / limit)}
           page={page}
           onChange={(e: ChangeEvent<unknown>, value: number) => {
+            console.log(e);
+            
             setPage(value);
             setOffset(value * limit - limit);
           }}
