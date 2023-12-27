@@ -1,7 +1,7 @@
 export const recentProjectsData = [
     {
         id: 1,
-        title: "$DX",
+        title: "4DX",
         progress: 55,
         check: {
             start: 8,
