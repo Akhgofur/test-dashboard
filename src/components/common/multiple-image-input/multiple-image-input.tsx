@@ -38,10 +38,10 @@ export const MultipleImageInput = ({
     <Box sx={{ py: 1 }}>
       <Grid container spacing={2}>
         {files?.map((item) => { 
-            const imgUrl = item?.isOld ? item?.image : URL.createObjectURL(item?.image);
+            const imgUrl = item?.isOld ? item?.image : URL.createObjectURL(item?.image as Blob);
           return (
             <Grid item xs={3}>
-              <Image onClick={() => handleDeleteImage(item)} image={imgUrl} />
+              <Image onClick={() => handleDeleteImage(item)} image={imgUrl as string} />
             </Grid>
           );
         })}
@@ -56,7 +56,7 @@ export const MultipleImageInput = ({
 interface IImageProps {
   onClick?: () => void;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  image: string | Blob;
+  image: string;
   isAdd?: boolean;
 }
 
